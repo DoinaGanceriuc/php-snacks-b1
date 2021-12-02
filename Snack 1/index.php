@@ -1,27 +1,27 @@
-<!-- Snack 1:
-Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
-Olimpia Milano - Cantù | 55-60 -->
-
 <?php
+/* Snack 1:
+Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
+Olimpia Milano - Cantù | 55-60 */
 
 
 $partite = [
     [
     'squadraCasa' => 'Olimpia Milano',
-    'puntiCasa' => 55
+    'squadraOspite' => 'Cantù',
+    'puntiCasa' => 55,
+    'puntiOspite' => 60
     ],
     [
-    'squadraOspite' => 'Cantù',
-    'puntiOspite' => 60
-    ]    
+    'squadraCasa' => 'Roma',
+    'squadraOspite' => 'Napoli',
+    'puntiCasa' => 85,
+    'puntiOspite' => 72
+    ]
 ];
-/* var_dump($partite[0], $partite[1]);
-echo $partite['squadraCasa']; */
 
 /* for ($i=0; $i < count($partite); $i++) { 
    $element = $partite[$i];
-   var_dump($element['squadraCasa']);
-   echo $element['squadraOspite'];
+
 } */
 
 
@@ -39,15 +39,22 @@ echo $partite['squadraCasa']; */
 <h2>Partita</h2>
 
 <?php
+
 for ($i=0; $i < count($partite); $i++) {
     $element = $partite[$i];?>
 
-        <p><?php echo $element['squadraCasa'],$element['squadraOspite'] ?></p>
-    
-    
-
+    <p>      
+    <?php echo $element['squadraCasa'];?>
+    <span>-</span>
+    <?php echo $element['squadraOspite'];?>
+    <span>|</span>
+     <?php echo $element['puntiCasa'];?>
+    <span>-</span>
+    <?php echo $element['puntiOspite'];?>
+    </p>
 
 <?php }
+
 ?>
     
 </body>
