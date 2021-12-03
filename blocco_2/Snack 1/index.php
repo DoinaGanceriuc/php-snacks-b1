@@ -31,13 +31,7 @@ $ads = [
     ],
 
 ];
-
-/* foreach ($ads as $key => $value) {
-    var_dump($value['image_path']);
-    // echo $value['image_path'];
-
-
-} */
+$random = $ads[array_rand($ads)];
 
 ?>
 
@@ -52,26 +46,18 @@ $ads = [
 <body>
     <?php
     foreach ($ads as $key => $value) {
-    $showimage = $value['image_path'];
-    $showLink = $value['link'];
+    /*$showimage = $value['image_path'];
+    $showLink = $value['link']; */
     $active =  $value['is_active'];
+  }
     if ($active === true) {?>
-    <a href="<?php echo $showLink; ?>">
-         <img src="<?php echo $showimage; ?>" alt="">
+    <a href="<?php echo $random['link']; ?>">
+         <img src="<?php echo $random['image_path']; ?>" alt="">
     </a>
     <?php
     }
 
     ?>
-    
-    
-    <?php
-
-    }
    
-
-    ?>
-
-     
 </body>
 </html>
